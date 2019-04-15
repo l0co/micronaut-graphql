@@ -28,7 +28,7 @@ public class Book {
 	private String name;
 
 	@NotNull
-	@Column(name = "isbn", nullable = false)
+	@Column(name = "author", nullable = false)
 	private String author;
 
 	@ManyToOne
