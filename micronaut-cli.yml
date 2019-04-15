@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: com.lifeinide.micronaut
+---
+testFramework: junit
+sourceLanguage: java
