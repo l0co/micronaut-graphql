@@ -31,6 +31,8 @@ public class DataLoader {
 	protected void init(StartupEvent event) {
 		// if no data yet in the database
 		if (((Number) entityManager.createQuery("select count(*) from Genre").getSingleResult()).longValue() == 0) {
+			logger.debug("Loading initial data to the database");
+
 			Genre genre = new Genre("Crime");
 			entityManager.persist(genre);
 
@@ -41,7 +43,7 @@ public class DataLoader {
 
 		// log what we have in the db
 		for (Book book : (List<Book>) entityManager.createQuery("from Book").getResultList())
-			logger.info("Book found: {}, {}, {}", book.getAuthor(), book.getName(), book.getGenre().getName());
+			logger.debug("Book found: {}, {}, {}", book.getAuthor(), book.getName(), book.getGenre().getName());
 	}
 
 }
