@@ -18,14 +18,12 @@ import java.util.List;
  *
  * @author Lukasz Frankowski
  */
-@Transactional
-@Singleton
+@Transactional @Singleton
 public class DataLoader {
 
 	public static final Logger logger = LoggerFactory.getLogger(DataLoader.class);
 
-	@PersistenceContext
-	private EntityManager entityManager;
+	@PersistenceContext private EntityManager entityManager;
 
 	@EventListener
 	protected void init(StartupEvent event) {
