@@ -13,8 +13,8 @@ public class Book {
 	public Book() {
 	}
 
-	public Book(@NotNull String isbn, @NotNull String name, Genre genre) {
-		this.isbn = isbn;
+	public Book(@NotNull String author, @NotNull String name, Genre genre) {
+		this.author = author;
 		this.name = name;
 		this.genre = genre;
 	}
@@ -29,7 +29,7 @@ public class Book {
 
 	@NotNull
 	@Column(name = "isbn", nullable = false)
-	private String isbn;
+	private String author;
 
 	@ManyToOne
 	private Genre genre;
@@ -50,12 +50,12 @@ public class Book {
 		this.name = name;
 	}
 
-	public String getIsbn() {
-		return isbn;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public Genre getGenre() {
@@ -75,7 +75,7 @@ public class Book {
 		sb.append(", name='");
 		sb.append(name);
 		sb.append("', isbn='");
-		sb.append(isbn);
+		sb.append(author);
 		sb.append("', genre='");
 		sb.append(genre);
 		sb.append("'}");
