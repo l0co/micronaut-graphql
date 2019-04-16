@@ -18,3 +18,10 @@ jpa:
         hbm2ddl:
           auto: update
         show_sql: false
+
+graphql:
+  enabled: true
+  path: /graphql
+  graphiql:
+    enabled: true
+    path: /graphiql
