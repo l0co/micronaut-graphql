@@ -26,6 +26,7 @@ public class GraphQLFactory {
 	public static final Logger logger = LoggerFactory.getLogger(GraphQLFactory.class);
 
 	@Inject protected BeanContext beanContext;
+	@Inject protected GraphQLTransactionInstrumentation graphQLTransactionInstrumentation;
 
 	@Bean @Singleton public GraphQL graphQL() {
 		GraphQLSchemaGenerator schemaGenerator = new GraphQLSchemaGenerator();
@@ -50,14 +51,8 @@ public class GraphQLFactory {
 			}
 		}
 
-//		var orderedGraphQLInstrumentations = new ArrayList<>(graphQLInstrumentations);
-//		OrderUtil.sort(orderedGraphQLInstrumentations);
-//		CompositeInstrumentation compositeInstrumentation = new CompositeInstrumentation();
-//		for (Instrumentation instrumentation: orderedGraphQLInstrumentations)
-//			compositeInstrumentation.add(instrumentation);
-
 		return new GraphQL.Builder(schemaGenerator.generate())
-//			.instrumentation(compositeInstrumentation)
+			.instrumentation(graphQLTransactionInstrumentation)
 			.build();
 	}
 
