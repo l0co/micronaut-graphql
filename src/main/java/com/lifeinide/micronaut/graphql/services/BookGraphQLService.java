@@ -1,6 +1,6 @@
 package com.lifeinide.micronaut.graphql.services;
 
-import com.lifeinide.micronaut.domain.Genre;
+import com.lifeinide.micronaut.domain.Book;
 import com.lifeinide.micronaut.graphql.GraphQLService;
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLQuery;
@@ -16,18 +16,18 @@ import java.util.Optional;
  */
 @SuppressWarnings("unchecked")
 @Transactional @GraphQLService
-public class GenreGraphQLService {
+public class BookGraphQLService {
 
 	@PersistenceContext private EntityManager entityManager;
 
 	@GraphQLQuery
-	public List<Genre> genreList() {
-		return entityManager.createQuery("from Genre").getResultList();
+	public List<Book> bookList() {
+		return entityManager.createQuery("from Book").getResultList();
 	}
 
 	@GraphQLQuery
-	public Optional<Genre> genre(@GraphQLArgument(name = "id") long id) {
-		return Optional.ofNullable(entityManager.find(Genre.class, id));
+	public Optional<Book> book(@GraphQLArgument(name = "id") long id) {
+		return Optional.ofNullable(entityManager.find(Book.class, id));
 	}
 
 }
