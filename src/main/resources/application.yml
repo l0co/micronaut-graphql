@@ -1,6 +1,17 @@
 micronaut:
   application:
     name: micronaut-graphql
+  security:
+    enabled: true
+    intercept-url-map:
+      -
+        pattern: /graphiql
+        access:
+          - isAnonymous()
+      -
+        pattern: /graphql
+        access:
+          - isAuthenticated()
 
 datasources:
   default:
