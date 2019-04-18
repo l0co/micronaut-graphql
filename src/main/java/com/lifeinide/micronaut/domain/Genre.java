@@ -1,5 +1,7 @@
 package com.lifeinide.micronaut.domain;
 
+import io.leangen.graphql.annotations.GraphQLQuery;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
@@ -30,6 +32,7 @@ public class Genre {
 	@OneToMany(mappedBy = "genre")
 	private Set<Book> books = new HashSet<>();
 
+	@GraphQLQuery
 	public Long getId() {
 		return id;
 	}
@@ -38,6 +41,7 @@ public class Genre {
 		this.id = id;
 	}
 
+	@GraphQLQuery
 	public String getName() {
 		return name;
 	}

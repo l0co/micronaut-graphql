@@ -27,10 +27,11 @@ public class GraphQLFactory {
 
 	@Inject protected BeanContext beanContext;
 	@Inject protected GraphQLTransactionInstrumentation graphQLTransactionInstrumentation;
+	@Inject protected GraphQLInclusionStrategy graphQLInclusionStrategy;
 
 	@Bean @Singleton public GraphQL graphQL() {
-		GraphQLSchemaGenerator schemaGenerator = new GraphQLSchemaGenerator();
-//			.withInclusionStrategy(new ExplicitInclusionStrategy());
+		GraphQLSchemaGenerator schemaGenerator = new GraphQLSchemaGenerator()
+			.withInclusionStrategy(graphQLInclusionStrategy);
 
 		Collection graphQLServices = beanContext.getBeansOfType(Object.class, Qualifiers.byStereotype(GraphQLService.class));
 
@@ -55,6 +56,5 @@ public class GraphQLFactory {
 			.instrumentation(graphQLTransactionInstrumentation)
 			.build();
 	}
-
 
 }

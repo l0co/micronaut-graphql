@@ -1,5 +1,7 @@
 package com.lifeinide.micronaut.domain;
 
+import io.leangen.graphql.annotations.GraphQLQuery;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -34,6 +36,7 @@ public class Book {
 	@ManyToOne
 	private Genre genre;
 
+	@GraphQLQuery
 	public Long getId() {
 		return id;
 	}
@@ -42,6 +45,7 @@ public class Book {
 		this.id = id;
 	}
 
+	@GraphQLQuery
 	public String getName() {
 		return name;
 	}
@@ -50,6 +54,7 @@ public class Book {
 		this.name = name;
 	}
 
+	@GraphQLQuery
 	public String getAuthor() {
 		return author;
 	}
@@ -58,6 +63,7 @@ public class Book {
 		this.author = author;
 	}
 
+	@GraphQLQuery
 	public Genre getGenre() {
 		return genre;
 	}
