@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * AOP interceptor, intercepting {@link Secured}-annotated methods with security check.
+ *
  * @author Lukasz Frankowski
  */
 @Singleton

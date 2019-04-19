@@ -20,6 +20,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
+ * {@link Genre} {@link GraphQLService}
+ *
  * @author Lukasz Frankowski
  */
 @SuppressWarnings("unchecked")

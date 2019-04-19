@@ -11,6 +11,8 @@ import io.reactivex.Flowable;
 import org.reactivestreams.Publisher;
 
 /**
+ * The filter to add {@code WWW-Authenticate} header for the browser to display Basic HTTP Auth popup on HTTP 401: Unauthorized.
+ *
  * @author Lukasz Frankowski
  */
 @Filter("/**")

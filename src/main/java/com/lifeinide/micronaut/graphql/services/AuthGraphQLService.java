@@ -9,6 +9,8 @@ import javax.inject.Inject;
 import java.util.Map;
 
 /**
+ * {@link GraphQLService} returning information about currently logged-in user.
+ *
  * @author Lukasz Frankowski
  */
 @GraphQLService

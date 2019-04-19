@@ -14,6 +14,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
 /**
+ * Defines the rules which entity/DTO fields are considered in client input/output frames.
+ *
  * @author Lukasz Frankowski
  */
 @Singleton

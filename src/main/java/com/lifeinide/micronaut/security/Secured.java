@@ -7,6 +7,8 @@ import io.micronaut.security.rules.SecurityRule;
 import java.lang.annotation.*;
 
 /**
+ * Custom {@link io.micronaut.security.annotation.Secured} annotation supported with AOP {@link SecuredInterceptor}.
+ *
  * @author Lukasz Frankowski
  */
 @Documented

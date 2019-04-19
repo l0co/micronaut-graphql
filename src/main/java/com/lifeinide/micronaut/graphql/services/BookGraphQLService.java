@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Optional;
 
 /**
+ * {@link Book} {@link GraphQLService}.
+ *
  * @author Lukasz Frankowski
  */
 @SuppressWarnings("unchecked")

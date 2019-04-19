@@ -11,6 +11,8 @@ import javax.inject.Singleton;
 import java.util.List;
 
 /**
+ * Provides dummy users with passwords and authorities for Basic HTTP Auth.
+ *
  * @author Lukasz Frankowski
  */
 @Singleton
