@@ -2,7 +2,7 @@
 
 This project shows how to use [Micronaut](https://micronaut.io) with [java-graphql](https://github.com/graphql-java/graphql-java) and [graphql-spql](https://github.com/leangen/graphql-spqr) with transactions and security support.
 
-[//]: # (TODOLF article link reference)
+The full documentation is included [here](http://lifeinide.com/post/2019-04-15-micronaut-graphql-with-transaction-and-security-support/).
 
 ## Running the example
 
