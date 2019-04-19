@@ -1,8 +1,10 @@
 package com.lifeinide.micronaut.graphql.services;
 
+import com.lifeinide.micronaut.auth.AuthenticationProvider;
 import com.lifeinide.micronaut.domain.Book;
 import com.lifeinide.micronaut.domain.Genre;
 import com.lifeinide.micronaut.graphql.GraphQLService;
+import com.lifeinide.micronaut.security.Secured;
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLContext;
 import io.leangen.graphql.annotations.GraphQLMutation;
@@ -41,7 +43,7 @@ public class GenreGraphQLService {
 		return genre.getBooks().stream().limit(limit).collect(Collectors.toList());
 	}
 
-	@GraphQLMutation
+	@GraphQLMutation @Secured(AuthenticationProvider.ROLE_ADMIN)
 	public Genre genreCreate(@NotNull @GraphQLArgument(name = "name") String name) {
 		Genre genre = new Genre();
 		genre.setName(name);
